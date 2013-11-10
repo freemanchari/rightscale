@@ -7,7 +7,7 @@ long_description IO.read(File.join(File.dirname(__FILE__), 'README.md'))
 version          "0.1.2"
 
 depends "collectd"
-depends "rest_connection"
+#depends "rest_connection"
 
 recipe "rightscale::default", "Sets up RightScale Monitoring, installs RightScale Tools and adds RightScale Server tags."
 recipe "rightscale::tools", "Installs RightScale Tools (RubyGem)."
