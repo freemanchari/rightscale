@@ -25,8 +25,7 @@ require 'json'
 instance_id = File.read('/var/spool/cloud/meta-data/instance-id')
 
 server = Server.find_with_filter('aws_id' => "#{instance_id}")[0]
-puts server.to_yaml
-  
+puts server.to_yaml  
 # get current instance of server
 server.reload_current
 puts JSON.pretty_generate(server.settings)
@@ -55,9 +54,10 @@ inputs.each { |input,v|
         end
       end
     end
-  }
-  puts "\n#{p server_attributes}", 'debug'
-elseif opts[:template]
+}
+
+puts "\n#{p server_attributes}", 'debug'
+if opts[:template]
   # steal inputs from ST
 
   logger.log "Importing rest_connection Rubygem.."
