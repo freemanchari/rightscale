@@ -57,7 +57,7 @@ inputs.each { |input,v|
     end
   }
   puts "\n#{p server_attributes}", 'debug'
-elsif opts[:template]
+elseif opts[:template]
   # steal inputs from ST
 
   logger.log "Importing rest_connection Rubygem.."
